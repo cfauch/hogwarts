@@ -16,4 +16,4 @@
  * @author c.fauch
  *
  */
-package com.code.fauch.hogwarts;
+package com.code.fauch.hogwarts.core.model;
