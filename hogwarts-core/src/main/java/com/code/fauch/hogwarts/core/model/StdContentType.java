@@ -54,7 +54,9 @@ public final class StdContentType implements IContentTypeProvider {
         public byte[] encode(Sequence content) {
             final ByteArrayOutputStream output = new ByteArrayOutputStream();
             for (Parameter<?> p : Objects.requireNonNull(content, "content is mandatory")) {
-                output.writeBytes(p.getBytes());
+                if (p != null) {
+                    output.writeBytes(p.getBytes());
+                }
             }
             return content.getSize() == null ? output.toByteArray() : Arrays.copyOf(output.toByteArray(), content.getSize());
         }

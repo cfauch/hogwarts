@@ -18,6 +18,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Definition of a sequence of parameters.
@@ -53,11 +54,11 @@ public final class Sequence implements Iterable<Parameter<?>>, IContent {
      * Constructor.
      * 
      * @param size the expected size in bytes of the encoded content (may be null).
-     * @param parameters the ordered list of parameters (to copy)
+     * @param parameters the ordered list of parameters (to copy, not null may be empty)
      */
     public Sequence(final Integer size, final List<Parameter<?>> parameters) {
         this(size);
-        this.parameters.addAll(parameters);
+        this.parameters.addAll(Objects.requireNonNull(parameters, "parameters is mandatory"));
     }
     
     /**
