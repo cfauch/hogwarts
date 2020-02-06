@@ -19,6 +19,7 @@ import java.util.Objects;
 
 /**
  * Definition of a payload.
+ * A payload associating a content type with content so that it can be encoded and sent over the network.
  * It is possible for client code to subscribe on changes of the content of the payload.
  * 
  * @author c.fauch
